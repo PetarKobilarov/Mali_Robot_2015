@@ -92,9 +92,9 @@ system.d \
 usart.d \
 yellowSide.d
 
-OUTPUT_FILE_PATH +=Veliki_Robot_2015.elf
+OUTPUT_FILE_PATH +=Mali_Robot_2015.elf
 
-OUTPUT_FILE_PATH_AS_ARGS +=Veliki_Robot_2015.elf
+OUTPUT_FILE_PATH_AS_ARGS +=Mali_Robot_2015.elf
 
 ADDITIONAL_DEPENDENCIES:=
 
@@ -152,13 +152,13 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP)
 	@echo Building target: $@
 	@echo Invoking: AVR/GNU Linker : 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Veliki_Robot_2015.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mrelax -mmcu=at90can128  
+	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="Mali_Robot_2015.map" -Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections -mrelax -mmcu=at90can128  
 	@echo Finished building target: $@
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Veliki_Robot_2015.elf" "Veliki_Robot_2015.hex"
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Veliki_Robot_2015.elf" "Veliki_Robot_2015.eep" || exit 0
-	"C:\WinAVR-20100110\bin\avr-objdump.exe" -h -S "Veliki_Robot_2015.elf" > "Veliki_Robot_2015.lss"
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "Veliki_Robot_2015.elf" "Veliki_Robot_2015.srec"
-	"C:\WinAVR-20100110\bin\avr-size.exe" "Veliki_Robot_2015.elf"
+	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures  "Mali_Robot_2015.elf" "Mali_Robot_2015.hex"
+	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "Mali_Robot_2015.elf" "Mali_Robot_2015.eep" || exit 0
+	"C:\WinAVR-20100110\bin\avr-objdump.exe" -h -S "Mali_Robot_2015.elf" > "Mali_Robot_2015.lss"
+	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature -R .user_signatures "Mali_Robot_2015.elf" "Mali_Robot_2015.srec"
+	"C:\WinAVR-20100110\bin\avr-size.exe" "Mali_Robot_2015.elf"
 	
 	
 
@@ -170,5 +170,5 @@ $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP) $(LIB_DEP)
 clean:
 	-$(RM) $(OBJS_AS_ARGS) $(EXECUTABLES)  
 	-$(RM) $(C_DEPS_AS_ARGS)   
-	rm -rf "Veliki_Robot_2015.elf" "Veliki_Robot_2015.a" "Veliki_Robot_2015.hex" "Veliki_Robot_2015.lss" "Veliki_Robot_2015.eep" "Veliki_Robot_2015.map" "Veliki_Robot_2015.srec" "Veliki_Robot_2015.usersignatures"
+	rm -rf "Mali_Robot_2015.elf" "Mali_Robot_2015.a" "Mali_Robot_2015.hex" "Mali_Robot_2015.lss" "Mali_Robot_2015.eep" "Mali_Robot_2015.map" "Mali_Robot_2015.srec" "Mali_Robot_2015.usersignatures"
 	

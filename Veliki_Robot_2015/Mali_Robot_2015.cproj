@@ -13,7 +13,7 @@
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
     <AssemblyName>Veliki_Robot_2015</AssemblyName>
-    <Name>Veliki_Robot_2015</Name>
+    <Name>Mali_Robot_2015</Name>
     <RootNamespace>Veliki_Robot_2015</RootNamespace>
     <ToolchainFlavour>WINAvr</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
