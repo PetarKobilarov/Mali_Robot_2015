@@ -92,11 +92,13 @@ void systemInit(void)
 	Timer_Init(1000);
 	servo_init(100);
 	DDRG = 0xFF;
+	DDRA = 0x00;
 	CAN_Init(4);
 	
-	forwardLeftSensor = GPIO_PinRegister(GPIOE_BASE, 4); // backwardRight je u stvari
-	forwardRightSensor = GPIO_PinRegister(GPIOA_BASE, 6); // taster nazad 
-	backwardLeftSensor = GPIO_PinRegister(GPIOA_BASE, 7); // taster napred
+	forwardLeftSensor = GPIO_PinRegister(GPIOA_BASE, 0); // senzor napred levo
+	forwardRightSensor = GPIO_PinRegister(GPIOA_BASE, 3); // senzor napred desno 
+	backwardLeftSensor = GPIO_PinRegister(GPIOA_BASE, 2); // senzor nazad levo
+	backwardRightSensor = GPIO_PinRegister(GPIOA_BASE, 1);//senzor nazad desno
 	
 	
 	_delay_ms(1000);

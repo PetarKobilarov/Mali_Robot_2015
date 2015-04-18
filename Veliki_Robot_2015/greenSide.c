@@ -7,7 +7,7 @@
 #include "sides.h"
 #include "usart.h"
 
-char detectionCallback(void)
+/*char detectionCallback(void)
 {
 	if(GPIO_PinRead(backwardLeftSensor) == 1 || GPIO_PinRead(forwardRightSensor) == 1)
 	{
@@ -19,7 +19,7 @@ char detectionCallback(void)
 	PORTG = 0;
 	
 	return 0;
-}
+}*/
 
 /*************************************************************************************************************************************************************************************
 											 					POZICIJE,BRZINE,SMEROVI I DETEKCIJE ZA ZELENU STRANU
